@@ -1,0 +1,104 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    background-color: #121212;
+    color: white;
+}
+
+.hero {
+    background: linear-gradient(to right, #475158, #120530);
+    color: white;
+    padding: 100px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.hero img {
+    max-width: 35%;
+    border-radius: 10px;
+    margin-left: 90px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 1);
+}
+
+#projects {
+    background: linear-gradient(to right, #475158, #120530);
+    color: white;
+    padding: 30px 0;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 1);
+}
+
+.card-text {
+    text-shadow: 1px 2px 3px rgb(0, 0, 0);
+}
+
+.project-card {
+    transition: transform 0.1s;
+}
+
+.project-card:hover {
+    transform: scale(1.02);
+}
+
+.navbar-light.bg-light {
+    background-color: #1e1e1e !important;
+}
+
+.nav-link {
+    color: white !important;
+}
+
+.footer {
+    background-color: #1e1e1e;
+}
+
+.fixed-img {
+    width: 100%;
+    /* Asegura que ocupe todo el ancho del contenedor */
+    height: 330px;
+    /* Ajusta la altura según prefieras */
+    object-fit: cover;
+    /* Recorta la imagen para mantener la proporción */
+
+}
+
+.bg-secondary {
+    background-color: #0000008c !important;
+}
+
+.floating-tab {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    background-color: #3b3b3b;
+    /* Dark chess board color */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.floating-tab:hover {
+    background-color: #00a652;
+    /* Green from chess.com */
+}
+
+.floating-tab i {
+    font-size: 30px;
+}

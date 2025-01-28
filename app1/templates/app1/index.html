@@ -1,0 +1,120 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Portafolio{% endblock %}
+
+{% block content %}
+<!-- Floating Tab -->
+<div class="floating-tab" onclick="window.open('https://www.chess.com/member/danielugaldemunoz', '_blank')">
+    <i class="fas fa-chess-knight"></i>
+    <span><b>¡Desafíame!</b></span>
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container d-flex align-items-center justify-content-between">
+        <div class="text-container">
+            <h1>Tecnología acorde a tus ideas.</h1>
+            <p>Con un pie en la música y otro en la tecnología, encontré en la programación
+                el desafío perfecto para profesionalizar mi curiosidad y creatividad.
+                Ahora desarrollo aplicaciones Full Stack con Django,
+                enfocado en aprender constantemente y crear soluciones.</p>
+            <a href="{% static "pdf/cv_danielu.pdf" %}" class="btn btn-primary btn-lg">Ver mi Curriculum</a>
+        </div>
+        <img src="{% static "img/DALL·E 2025-01-24 21.11.57 - A person programming in a cozy, modern room with a dual monitor setup, and a single acoustic guitar leaning against the wall in the background. The en.webp" %}" alt="Mi Foto">
+    </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="py-5">
+    <div class="container">
+        <h2 id="about-title" class="text-center mb-4">Sobre mí</h2>
+        <p class="text-center">
+            ¡Hola! Soy <b>Daniel Ugalde Muñoz</b>, Ingeniero en Sonido y Desarrollador Fullstack especializado en
+            Django. 🌐 <br>
+            Nací en Chile, por lo que mi idioma nativo es el español (o algo así 😄), pero también cuento con un
+            buen manejo del <b>Inglés</b>, lo que me permite comunicarme y colaborar en proyectos internacionales.
+            <br><br>
+
+            Mi enfoque principal es la creación de <b>aplicaciones web dinámicas, eficientes y escalables</b>,
+            combinando una sólida lógica backend con interfaces frontend intuitivas. 💻 <br><br>
+
+            Tengo experiencia en <b>HTML, CSS, JavaScript</b> y otras herramientas que complementan mi desarrollo
+            fullstack. 🚀 Mi pasión por la tecnología me impulsa a aprender constantemente y a mantenerme
+            actualizado en las últimas tendencias del desarrollo web, lo que me permite transformar ideas en
+            <b>soluciones digitales funcionales y personalizadas</b>. 🔧📱 <br><br>
+
+            Además de mi carrera profesional, soy una persona con intereses variados. 🎶 La <b>música</b> es una de
+            mis grandes pasiones, y siempre encuentro tiempo para disfrutarla, ya sea como oyente o como creador.
+            <br>También soy un aficionado del <b>ajedrez</b> ♟️. ¿Te interesaría jugar una partida? <b>¡En la
+                pestaña del costado podrás desafiarme!</b> <br><br>
+
+            Si tienes un proyecto en mente o necesitas un desarrollador que combine creatividad, lógica y
+            compromiso, no dudes en <b>contactarme</b>. Estoy listo para ayudarte a convertir tus ideas en realidad.
+            ¡Hablemos! 🤝
+        </p>
+
+    </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="py-5 bg-dark">
+    <div class="container">
+        <h2 class="text-center mb-4">Mis Proyectos</h2>
+        <div class="row">
+            <!-- Project Card -->
+            <div class="col-md-4 mb-4">
+                <div class="card project-card shadow bg-secondary text-white">
+                    <img src="{% static "img/icons8-css-480.png" %}" class="card-img-top fixed-img" alt="Project Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto Educativo: CSS</h5>
+                        <p class="card-text">La página web diseñada tiene como propósito principal ofrecer una
+                            herramienta educativa accesible y práctica para estudiantes y principiantes que desean
+                            aprender y repasar los conceptos fundamentales del lenguaje CSS.</p>
+                        <a href="https://daniel-um8.github.io/Presentacion_CSS/" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card shadow bg-secondary text-white">
+                    <img src="{% static "img/icons8-python-480.png" %}" class="card-img-top fixed-img" alt="Project Image">
+                    <div class="card-body">
+                        <h5 class="card-title">Proyecto Educativo: Python 'def'</h5>
+                        <p class="card-text">Esta página web educativa está diseñada para enseñar de manera clara y
+                            práctica uno de los conceptos más fundamentales en Python: el comando def, utilizado
+                            para la creación de funciones. Es ideal para estudiantes que desean comprender cómo
+                            estructurar y reutilizar código mediante funciones en este lenguaje de programación.</p>
+                        <a href="https://daniel-um8.github.io/Presentaci-n_DEF/" class="btn btn-primary">Ver más</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card project-card shadow bg-secondary text-white">
+                    <img src="{% static "img/image_silhouette.png" %}" class="card-img-top fixed-img" alt="Project Image">
+                    <div class="card-body">
+                        <h5 class="card-title">ChincoLinux</h5>
+                        <p class="card-text">Esta distribución Linux chilena está diseñada para estudiantes,
+                            enfocada en reutilizar computadores de bajos recursos y fomentar el reciclaje. Ligera y
+                            eficiente, incluye software educativo y herramientas de aprendizaje preinstaladas,
+                            ofreciendo una solución accesible, sostenible y adaptada a las necesidades de los
+                            jóvenes.</p>
+                        <a href="#" class="btn btn-primary">Proximamente</a>
+                    </div>
+                </div>
+            </div>
+            <!-- Add more project cards as needed -->
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Contacto</h2>
+        <form method="POST" novalidate>
+            {% csrf_token %}
+            {{ form.as_p }}
+            <button type="submit" class="btn btn-primary mt-3">Enviar</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
